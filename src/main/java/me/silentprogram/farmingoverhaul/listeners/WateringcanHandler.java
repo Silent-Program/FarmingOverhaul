@@ -60,7 +60,7 @@ public class WateringcanHandler {
 					canMeta.setLore(ItemHandler.getCanLore(waterAmount - 1));
 					can.setItemMeta(canMeta);
 					for (int i = 0; i < 10; i++) {
-						block.getWorld().spawnParticle(Particle.WATER_SPLASH, block.getX() + random.nextDouble(), block.getY() + random.nextDouble(0.50), block.getZ() + random.nextDouble(0.99), 1);
+						block.getWorld().spawnParticle(Particle.WATER_SPLASH, block.getX() + random.nextDouble(), block.getY() + random.nextDouble(), block.getZ() + random.nextDouble(), 1);
 					}
 					if (chunkData.has(blockKey, PersistentDataType.LONG)) continue;
 					chunkData.set(blockKey, PersistentDataType.LONG, System.currentTimeMillis());
