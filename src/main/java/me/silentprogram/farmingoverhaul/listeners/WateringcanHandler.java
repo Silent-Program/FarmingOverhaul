@@ -25,7 +25,7 @@ public class WateringcanHandler {
 		//Initialize most variables
 		Player plr = event.getPlayer();
 		Location loc = plr.getLocation();
-		ThreadLocalRandom random = ThreadLocalRandom.current();
+		Random random = new Random();
 		NamespacedKey waterKey = new NamespacedKey(plugin, "waterLeft");
 		NamespacedKey canKey = new NamespacedKey(plugin, "isWateringCan");
 		
@@ -60,7 +60,7 @@ public class WateringcanHandler {
 					canMeta.setLore(ItemHandler.getCanLore(waterAmount - 1));
 					can.setItemMeta(canMeta);
 					for (int i = 0; i < 10; i++) {
-						block.getWorld().spawnParticle(Particle.WATER_SPLASH, block.getX() + random.nextDouble(0.99), block.getY() + random.nextDouble(0.50), block.getZ() + random.nextDouble(0.99), 1);
+						block.getWorld().spawnParticle(Particle.WATER_SPLASH, block.getX() + random.nextDouble(), block.getY() + random.nextDouble(0.50), block.getZ() + random.nextDouble(0.99), 1);
 					}
 					if (chunkData.has(blockKey, PersistentDataType.LONG)) continue;
 					chunkData.set(blockKey, PersistentDataType.LONG, System.currentTimeMillis());
