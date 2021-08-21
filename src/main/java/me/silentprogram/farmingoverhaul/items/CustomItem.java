@@ -9,6 +9,8 @@ public interface CustomItem {
 	
 	public String getName();
 	
+        public boolean isDataEnabled();
+
 	public HashMap<NamespacedKey, Object> getData();
 	
 	public List<String> getLore();
