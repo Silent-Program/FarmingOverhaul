@@ -1,0 +1,8 @@
+name: FarmingOverhaul
+version: ${project.version}
+main: me.silentprogram.farmingoverhaul.FarmingOverhaul
+api-version: 1.17
+prefix: Farming
+load: STARTUP
+authors: [ SilentProgram ]
+description: A farming overhaul for minecraft!

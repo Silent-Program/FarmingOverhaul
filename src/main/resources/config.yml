@@ -1,0 +1,15 @@
+#Enable growth timer.  This makes plants not be able to grow until after the delay
+enable-plant-timer: true
+
+#The delay for the growth timer.  (In minutes)
+plant-delay: 1
+
+#Force plants to have natural light from sky to grow
+sky-light-enabled: true
+
+#Enable watering can
+wateringcan-enabled: true
+
+#Enable anti-inbreeding animals
+anti-inbreeding-enabled: true
+
