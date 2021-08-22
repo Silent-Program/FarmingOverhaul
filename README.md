@@ -7,16 +7,16 @@ This includes plants, and animals.
 
 Animal Changes:
 
-  You can no longer inbreed animals.
+   - You can no longer inbreed animals.
 
-  Added family system.
+   - Added family system.
 
 
 
 Plant Changes:
 
-  Plants must be watered to grow.
+  - Plants must be watered to grow.
 
-  Added watering can
+  - Added watering can
 
-  Plants must be in sunlight to grow
+  - Plants must be in sunlight to grow
