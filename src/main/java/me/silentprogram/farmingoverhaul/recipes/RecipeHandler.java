@@ -17,8 +17,8 @@ public class RecipeHandler {
 	
 	public void registerRecipes() {
 		//Loop through items and create a recipe
-		for (CustomItem item : plugin.configTalker.items.keySet()) {
-			if (!plugin.configTalker.items.get(item)) continue;
+		for (CustomItem item : plugin.configTalker.getItems().keySet()) {
+			if (!plugin.configTalker.getItems().get(item)) continue;
 			if (!plugin.configTalker.config.getBoolean(item.getName())) continue;
 			ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, item.getName()), item.getItem());
 			recipe.shape(item.getRow1(), item.getRow2(), item.getRow3());

@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigTalker {
-	public Map<CustomItem, Boolean> items = new HashMap<>();
 	public FileConfiguration config;
+	Map<CustomItem, Boolean> items = new HashMap<>();
 	FarmingOverhaul plugin;
 	
 	public ConfigTalker(FarmingOverhaul plugin) {
@@ -37,6 +37,10 @@ public class ConfigTalker {
 	
 	public boolean isSkyLightEnabled() {
 		return config.getBoolean("sky-light-enabled");
+	}
+	
+	public Map<CustomItem, Boolean> getItems() {
+		return items;
 	}
 	
 	public void initializeItems() {

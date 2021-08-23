@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BreadierBread extends ItemStack implements CustomItem{
+public class BreadierBread extends ItemStack implements CustomItem {
 	
 	public BreadierBread(FarmingOverhaul plugin) {
 		super(Material.BREAD);
