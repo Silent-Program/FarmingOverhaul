@@ -6,16 +6,14 @@ import me.silentprogram.farmingoverhaul.items.CustomItem;
 import me.silentprogram.farmingoverhaul.items.WateringCan;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ConfigTalker {
 	public FileConfiguration config;
-	Map<CustomItem, Boolean> items = new HashMap<>();
+	List<CustomItem> items = new ArrayList<>();
 	FarmingOverhaul plugin;
-	
-	WateringCan wateringCan;
-	BreadierBread breadierBread;
 	
 	public ConfigTalker(FarmingOverhaul plugin) {
 		this.plugin = plugin;
@@ -42,18 +40,16 @@ public class ConfigTalker {
 		return config.getBoolean("sky-light-enabled");
 	}
 	
-	public Map<CustomItem, Boolean> getItems() {
+	public List<CustomItem> getItems() {
 		return items;
 	}
 	
-	public boolean isItemEnabled(String itemName){
+	public boolean isItemEnabled(String itemName) {
 		return config.getBoolean(itemName);
 	}
 	
 	public void initializeItems() {
-		breadierBread = new BreadierBread(plugin);
-		wateringCan = new WateringCan(plugin);
-		items.put(wateringCan, isCanEnabled());
-		items.put(breadierBread, isItemEnabled(breadierBread.getName()));
+		items.add(new WateringCan(plugin));
+		items.add(new BreadierBread(plugin));
 	}
 }

@@ -17,4 +17,6 @@ public interface CustomItem {
 	Map<Character, Object> getIngredients();
 	
 	ItemStack getItem();
+	
+	boolean isEnabled();
 }

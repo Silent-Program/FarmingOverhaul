@@ -14,9 +14,11 @@ import java.util.List;
 import java.util.Map;
 
 public class WateringCan extends ItemStack implements CustomItem {
+	boolean isEnabled;
 	
 	public WateringCan(FarmingOverhaul plugin) {
 		super(Material.CLOCK);
+		isEnabled = plugin.configTalker.isCanEnabled();
 		
 		ItemMeta canMeta = this.getItemMeta();
 		PersistentDataContainer canData = canMeta.getPersistentDataContainer();
@@ -64,5 +66,10 @@ public class WateringCan extends ItemStack implements CustomItem {
 	@Override
 	public ItemStack getItem() {
 		return this;
+	}
+	
+	@Override
+	public boolean isEnabled() {
+		return isEnabled;
 	}
 }
