@@ -1,7 +1,6 @@
 package me.silentprogram.farmingoverhaul.listeners;
 
 import me.silentprogram.farmingoverhaul.FarmingOverhaul;
-import me.silentprogram.farmingoverhaul.configstuff.NameSpacedKeys;
 import me.silentprogram.farmingoverhaul.items.ItemHandler;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -27,8 +26,8 @@ public class ItemListener {
 		Player plr = event.getPlayer();
 		Location loc = plr.getLocation();
 		Random random = new Random();
-		NamespacedKey waterKey = NameSpacedKeys.WATER_LEFT;
-		NamespacedKey canKey = NameSpacedKeys.IS_WATERING_CAN;
+		NamespacedKey waterKey = new NamespacedKey(plugin, "waterLeft");
+		NamespacedKey canKey = new NamespacedKey(plugin, "isWateringCan");
 		
 		//Check if player is holder watering can
 		if (plr.getInventory().getItemInMainHand() == null) return;

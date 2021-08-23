@@ -22,9 +22,9 @@ public class Listeners implements Listener {
 	//Plant related listeners
 	@EventHandler
 	public void onBlockGrow(BlockGrowEvent event) {
-		if (plugin.configTalker.isCanEnabled())
+		if (plugin.getConfigTalker().isCanEnabled())
 			PlantListener.plantWateredHandler(event, plugin);
-		if(plugin.configTalker.isSkyLightEnabled())
+		if(plugin.getConfigTalker().isSkyLightEnabled())
 			PlantListener.plantLightHandler(event);
 	}
 	
@@ -36,20 +36,20 @@ public class Listeners implements Listener {
 	//Player related listeners
 	@EventHandler
 	public void onPlayerSneak(PlayerToggleSneakEvent event) {
-		if (plugin.configTalker.isCanEnabled())
+		if (plugin.getConfigTalker().isCanEnabled())
 			ItemListener.activateWateringCan(event, plugin);
 	}
 	
 	@EventHandler
 	public void onPlayerRightClick(PlayerInteractEvent event) {
-		if (plugin.configTalker.isCanEnabled())
+		if (plugin.getConfigTalker().isCanEnabled())
 			ItemListener.refillWateringCan(event, plugin);
 	}
 	
 	//Entity related listeners
 	@EventHandler
 	public void onEntityBreed(EntityBreedEvent event) {
-		if (plugin.configTalker.isAntiInbreedEnabled())
+		if (plugin.getConfigTalker().isAntiInbreedEnabled())
 			entityHandler.assignParentsToChild(event);
 	}
 	

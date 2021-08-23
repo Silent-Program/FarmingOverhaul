@@ -17,7 +17,6 @@ public class ConfigTalker {
 	public ConfigTalker(FarmingOverhaul plugin) {
 		this.plugin = plugin;
 		config = plugin.getConfig();
-		initializeItems();
 	}
 	
 	public int getPlantDelay() {

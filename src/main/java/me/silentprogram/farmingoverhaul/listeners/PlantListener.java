@@ -16,7 +16,7 @@ public class PlantListener {
 		
 		Block block = event.getBlock();
 		PersistentDataContainer chunkData = block.getChunk().getPersistentDataContainer();
-		long delay = plugin.configTalker.getPlantDelay();
+		long delay = plugin.getConfigTalker().getPlantDelay();
 		NamespacedKey blockKey = new NamespacedKey(plugin, block.getX() + "_" + block.getY() + "_" + block.getZ() + "_wateredTime");
 		//Check if block is specific type of plant if not, exit the event
 		if (!(block.getType() == Material.CARROT || block.getType() == Material.WHEAT || block.getType() == Material.BEETROOTS || block.getType() == Material.POTATOES))

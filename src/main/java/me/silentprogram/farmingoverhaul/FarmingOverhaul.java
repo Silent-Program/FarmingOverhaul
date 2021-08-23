@@ -34,7 +34,7 @@ Possibly add:
 
 
 public final class FarmingOverhaul extends JavaPlugin {
-	public ConfigTalker configTalker;
+	ConfigTalker configTalker;
 	
 	@Override
 	public void onEnable() {
@@ -51,9 +51,14 @@ public final class FarmingOverhaul extends JavaPlugin {
 		saveDefaultConfig();
 		//Register my config talker
 		configTalker = new ConfigTalker(this);
+		configTalker.initializeItems();
 		//Register listener
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
 		//If the watering can is disabled then ignore this
 		new RecipeHandler(this).registerRecipes();
+	}
+	
+	public ConfigTalker getConfigTalker(){
+		return configTalker;
 	}
 }
