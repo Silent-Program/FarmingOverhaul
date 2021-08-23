@@ -15,9 +15,9 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.RayTraceResult;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
-public class WateringcanHandler {
+public class ItemListener {
 	
 	public static void activateWateringCan(PlayerToggleSneakEvent event, FarmingOverhaul plugin) {
 		//Check if player is sneaking first

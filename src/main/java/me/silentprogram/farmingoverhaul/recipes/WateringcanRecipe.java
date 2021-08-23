@@ -2,6 +2,7 @@ package me.silentprogram.farmingoverhaul.recipes;
 
 import me.silentprogram.farmingoverhaul.FarmingOverhaul;
 import me.silentprogram.farmingoverhaul.items.ItemHandler;
+import me.silentprogram.farmingoverhaul.items.WateringCan;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -16,7 +17,7 @@ public class WateringcanRecipe {
 
 	
 	public ShapedRecipe createCanRecipe(){
-		ItemStack item = ItemHandler.getWateringCan(plugin);
+		ItemStack item = new WateringCan(plugin);
 		ShapedRecipe canRecipe = new ShapedRecipe(new NamespacedKey(plugin, "wateringCan"), item);
 		
 		canRecipe.shape("   ",

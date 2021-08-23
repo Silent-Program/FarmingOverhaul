@@ -12,38 +12,38 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 public class Listeners implements Listener {
 	FarmingOverhaul plugin;
-	EntityHandler entityHandler;
+	EntityListener entityHandler;
 	
 	public Listeners(FarmingOverhaul plugin) {
 		this.plugin = plugin;
-		entityHandler = new EntityHandler(plugin);
+		entityHandler = new EntityListener(plugin);
 	}
 	
 	//Plant related listeners
 	@EventHandler
 	public void onBlockGrow(BlockGrowEvent event) {
 		if (plugin.configTalker.isCanEnabled())
-			PlantHandler.plantWateredHandler(event, plugin);
+			PlantListener.plantWateredHandler(event, plugin);
 		if(plugin.configTalker.isSkyLightEnabled())
-			PlantHandler.plantLightHandler(event);
+			PlantListener.plantLightHandler(event);
 	}
 	
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
-		PlantHandler.removeData(event, plugin);
+		PlantListener.removeData(event, plugin);
 	}
 	
 	//Player related listeners
 	@EventHandler
 	public void onPlayerSneak(PlayerToggleSneakEvent event) {
 		if (plugin.configTalker.isCanEnabled())
-			WateringcanHandler.activateWateringCan(event, plugin);
+			ItemListener.activateWateringCan(event, plugin);
 	}
 	
 	@EventHandler
 	public void onPlayerRightClick(PlayerInteractEvent event) {
 		if (plugin.configTalker.isCanEnabled())
-			WateringcanHandler.refillWateringCan(event, plugin);
+			ItemListener.refillWateringCan(event, plugin);
 	}
 	
 	//Entity related listeners

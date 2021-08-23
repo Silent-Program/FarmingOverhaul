@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-public class EntityHandler {
+public class EntityListener {
 	//Create namespaced key once here
 	private final NamespacedKey fatherKey;
 	private final NamespacedKey motherKey;
 	
-	public EntityHandler(FarmingOverhaul plugin) {
+	public EntityListener(FarmingOverhaul plugin) {
 		//Assign values to the variables
 		fatherKey = new NamespacedKey(plugin, "father");
 		motherKey = new NamespacedKey(plugin, "mother");

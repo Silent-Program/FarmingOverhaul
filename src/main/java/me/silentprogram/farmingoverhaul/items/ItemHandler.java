@@ -19,23 +19,6 @@ from said interface
 
 public class ItemHandler {
 	//Wateringcan Related things
-	public static ItemStack getWateringCan(FarmingOverhaul plugin) {
-		ItemStack wateringCan = new ItemStack(Material.CLOCK);
-		ItemMeta canMeta = wateringCan.getItemMeta();
-		PersistentDataContainer canData = canMeta.getPersistentDataContainer();
-		List<String> lore = getCanLore(10);
-		
-		canData.set(new NamespacedKey(plugin, "isWateringCan"), PersistentDataType.BYTE, (byte) 1);
-		canData.set(new NamespacedKey(plugin, "waterLeft"), PersistentDataType.INTEGER, 10);
-		
-		canMeta.setDisplayName(ChatColor.DARK_BLUE + "Watering Can");
-		
-		canMeta.setLore(lore);
-		wateringCan.setItemMeta(canMeta);
-		
-		return wateringCan;
-	}
-	
 	public static List<String> getCanLore(int waterAmount) {
 		List<String> lore = new ArrayList<>();
 		

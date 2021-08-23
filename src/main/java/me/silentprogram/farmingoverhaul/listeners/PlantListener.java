@@ -9,7 +9,7 @@ import org.bukkit.event.block.BlockGrowEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
-public class PlantHandler {
+public class PlantListener {
 	
 	
 	public static void plantWateredHandler(BlockGrowEvent event, FarmingOverhaul plugin) {
