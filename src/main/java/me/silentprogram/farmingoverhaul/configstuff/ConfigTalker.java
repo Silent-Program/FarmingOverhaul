@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConfigTalker {
-	FarmingOverhaul plugin;
-	FileConfiguration config;
 	public Map<CustomItem, Boolean> items = new HashMap<>();
+	public FileConfiguration config;
+	FarmingOverhaul plugin;
 	
 	public ConfigTalker(FarmingOverhaul plugin) {
 		this.plugin = plugin;
@@ -21,26 +21,26 @@ public class ConfigTalker {
 	}
 	
 	public int getPlantDelay() {
-		if(config.getBoolean("enable-plant-timer")){
+		if (config.getBoolean("enable-plant-timer")) {
 			return config.getInt("plant-delay") * 60000;
 		}
 		return 1;
 	}
 	
-	public boolean isCanEnabled(){
+	public boolean isCanEnabled() {
 		return config.getBoolean("wateringcan-enabled");
 	}
 	
-	public boolean isAntiInbreedEnabled(){
+	public boolean isAntiInbreedEnabled() {
 		return config.getBoolean("anti-inbreeding-enabled");
 	}
 	
-	public boolean isSkyLightEnabled(){
+	public boolean isSkyLightEnabled() {
 		return config.getBoolean("sky-light-enabled");
 	}
 	
-	public void initializeItems(){
-		items.put(new WateringCan(plugin), true);
+	public void initializeItems() {
+		items.put(new WateringCan(plugin), isCanEnabled());
 		items.put(new BreadierBread(plugin), true);
 	}
 }

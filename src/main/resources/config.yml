@@ -13,3 +13,5 @@ wateringcan-enabled: true
 #Enable anti-inbreeding animals
 anti-inbreeding-enabled: true
 
+#Enabled Items
+breadier-bread: true
