@@ -1,6 +1,7 @@
 package me.silentprogram.farmingoverhaul.items;
 
 import me.silentprogram.farmingoverhaul.FarmingOverhaul;
+import me.silentprogram.farmingoverhaul.configstuff.NameSpacedKeys;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -24,7 +25,7 @@ public class BreadierBread extends ItemStack implements CustomItem {
 		ItemMeta itemMeta = this.getItemMeta();
 		PersistentDataContainer itemData = itemMeta.getPersistentDataContainer();
 		List<String> lore = new ArrayList<>();
-		itemData.set(new NamespacedKey(plugin, "isBreadierBread"), PersistentDataType.BYTE, (byte) 1);
+		itemData.set(NameSpacedKeys.IS_BREADIER_BREAD, PersistentDataType.BYTE, (byte) 1);
 		
 		lore.add("");
 		lore.add("Its breadier bread!");

@@ -1,9 +1,9 @@
 package me.silentprogram.farmingoverhaul.items;
 
 import me.silentprogram.farmingoverhaul.FarmingOverhaul;
+import me.silentprogram.farmingoverhaul.configstuff.NameSpacedKeys;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
@@ -23,8 +23,8 @@ public class WateringCan extends ItemStack implements CustomItem {
 		ItemMeta canMeta = this.getItemMeta();
 		PersistentDataContainer canData = canMeta.getPersistentDataContainer();
 		List<String> lore = ItemHandler.getCanLore(10);
-		canData.set(new NamespacedKey(plugin, "isWateringCan"), PersistentDataType.BYTE, (byte) 1);
-		canData.set(new NamespacedKey(plugin, "waterLeft"), PersistentDataType.INTEGER, 10);
+		canData.set(NameSpacedKeys.IS_WATERING_CAN, PersistentDataType.BYTE, (byte) 1);
+		canData.set(NameSpacedKeys.WATER_LEFT, PersistentDataType.INTEGER, 10);
 		
 		canMeta.setLore(lore);
 		canMeta.setDisplayName(ChatColor.DARK_BLUE + "Watering Can");
