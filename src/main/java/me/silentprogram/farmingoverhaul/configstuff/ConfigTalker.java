@@ -14,6 +14,9 @@ public class ConfigTalker {
 	Map<CustomItem, Boolean> items = new HashMap<>();
 	FarmingOverhaul plugin;
 	
+	WateringCan wateringCan;
+	BreadierBread breadierBread;
+	
 	public ConfigTalker(FarmingOverhaul plugin) {
 		this.plugin = plugin;
 		config = plugin.getConfig();
@@ -43,8 +46,14 @@ public class ConfigTalker {
 		return items;
 	}
 	
+	public boolean isItemEnabled(String itemName){
+		return config.getBoolean(itemName);
+	}
+	
 	public void initializeItems() {
-		items.put(new WateringCan(plugin), isCanEnabled());
-		items.put(new BreadierBread(plugin), true);
+		breadierBread = new BreadierBread(plugin);
+		wateringCan = new WateringCan(plugin);
+		items.put(wateringCan, isCanEnabled());
+		items.put(breadierBread, isItemEnabled(breadierBread.getName()));
 	}
 }
