@@ -9,30 +9,33 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WateringCan extends ItemStack implements CustomItem {
+public class BreadierBread extends ItemStack implements CustomItem{
 	
-	public WateringCan(FarmingOverhaul plugin) {
-		super(Material.CLOCK);
+	public BreadierBread(FarmingOverhaul plugin) {
+		super(Material.BREAD);
 		
-		ItemMeta canMeta = this.getItemMeta();
-		PersistentDataContainer canData = canMeta.getPersistentDataContainer();
-		List<String> lore = ItemHandler.getCanLore(10);
-		canData.set(new NamespacedKey(plugin, "isWateringCan"), PersistentDataType.BYTE, (byte) 1);
-		canData.set(new NamespacedKey(plugin, "waterLeft"), PersistentDataType.INTEGER, 10);
+		ItemMeta itemMeta = this.getItemMeta();
+		PersistentDataContainer itemData = itemMeta.getPersistentDataContainer();
+		List<String> lore = new ArrayList<>();
+		itemData.set(new NamespacedKey(plugin, "isBreadierBread"), PersistentDataType.BYTE, (byte) 1);
 		
-		canMeta.setLore(lore);
-		canMeta.setDisplayName(ChatColor.DARK_BLUE + "Watering Can");
+		lore.add("");
+		lore.add("Its breadier bread!");
 		
-		this.setItemMeta(canMeta);
+		itemMeta.setLore(lore);
+		itemMeta.setDisplayName(ChatColor.DARK_BLUE + "Breadier Bread");
+		
+		this.setItemMeta(itemMeta);
 	}
 	
 	@Override
 	public String getName() {
-		return "watering-can";
+		return "breadier-bread";
 	}
 	
 	@Override
@@ -42,22 +45,20 @@ public class WateringCan extends ItemStack implements CustomItem {
 	
 	@Override
 	public String getRow2() {
-		return "IWB";
+		return "BBB";
 	}
 	
 	@Override
 	public String getRow3() {
-		return "III";
+		return "   ";
 	}
-	
 	
 	@Override
 	public Map<Character, Object> getIngredients() {
 		Map<Character, Object> ingredients = new HashMap<>();
 		
-		ingredients.put('B', Material.IRON_BARS);
-		ingredients.put('I', Material.IRON_INGOT);
-		ingredients.put('W', Material.WATER_BUCKET);
+		ingredients.put('B', Material.BREAD);
+		
 		return ingredients;
 	}
 	

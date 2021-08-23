@@ -2,7 +2,7 @@ package me.silentprogram.farmingoverhaul;
 
 import me.silentprogram.farmingoverhaul.configstuff.ConfigTalker;
 import me.silentprogram.farmingoverhaul.listeners.Listeners;
-import me.silentprogram.farmingoverhaul.recipes.WateringcanRecipe;
+import me.silentprogram.farmingoverhaul.recipes.RecipeHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
@@ -54,8 +54,6 @@ public final class FarmingOverhaul extends JavaPlugin {
 		//Register listener
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
 		//If the watering can is disabled then ignore this
-		if (configTalker.isCanEnabled()) {
-			getServer().addRecipe(new WateringcanRecipe(this).createCanRecipe());
-		}
+		new RecipeHandler(this).registerRecipes();
 	}
 }
