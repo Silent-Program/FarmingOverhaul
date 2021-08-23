@@ -15,9 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 public class BreadierBread extends ItemStack implements CustomItem {
+	boolean isEnabled;
 	
 	public BreadierBread(FarmingOverhaul plugin) {
 		super(Material.BREAD);
+		isEnabled = plugin.configTalker.isItemEnabled(getName());
 		
 		ItemMeta itemMeta = this.getItemMeta();
 		PersistentDataContainer itemData = itemMeta.getPersistentDataContainer();
@@ -65,5 +67,10 @@ public class BreadierBread extends ItemStack implements CustomItem {
 	@Override
 	public ItemStack getItem() {
 		return this;
+	}
+	
+	@Override
+	public boolean isEnabled() {
+		return isEnabled;
 	}
 }
